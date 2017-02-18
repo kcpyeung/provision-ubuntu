@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  sudo: yes
+  tasks:
+  - name: install ubuntu desktop
+    apt:
+      name: ubuntu-desktop
+      update_cache: yes
+
+  - name: install gdm
+    apt:
+      name: gdm
+      update_cache: no
+
+  - name: reboot machine into GUI mode
+    shell: shutdown -r now
+
